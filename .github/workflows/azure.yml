@@ -34,9 +34,10 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
 
+      # using the install-azd action
       - name: Install azd
-        uses: Azure/setup-azd@v0.1.0
-      
+        uses: Azure/setup-azd@v1.0.0
+
       # azd set up Federated Credential by default. You can remove this step if you are using Client Credentials
       - name: Log in with Azure (Federated Credentials)
         if: ${{ env.AZURE_CLIENT_ID != '' }}
